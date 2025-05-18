@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 11, 2025 at 07:07 AM
+-- Generation Time: May 18, 2025 at 04:27 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -31,15 +31,17 @@ CREATE TABLE `users` (
   `id` int NOT NULL,
   `name` varchar(100) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL
+  `password` varchar(255) DEFAULT NULL,
+  `photo` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
-(1, 'John', 'john@mail.com', '$2b$10$3flKiY68plMcoc2By1PuYOHT86dzeogsWQgEHQYg.WZsorypMQDle');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `photo`) VALUES
+(1, 'John', 'john@gmail.com', '$2b$10$3flKiY68plMcoc2By1PuYOHT86dzeogsWQgEHQYg.WZsorypMQDle', '1747575092693.png'),
+(2, 'Andita Urban', 'urbanonline98@gmail.com', '$2b$10$Nyi2S/Br2CQmdkJAABTvfeIIJYJ26GoE/Y4Qxj1rAT6O8DkF/3ouq', '1747583176517.png');
 
 --
 -- Indexes for dumped tables
@@ -60,7 +62,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
