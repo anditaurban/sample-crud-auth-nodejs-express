@@ -1,16 +1,19 @@
 const mysql = require('mysql2');
 
 const conn = mysql.createConnection({
-  host: "hopper.proxy.rlwy.net",
-  user: "root",
-  password: "PxDCykBdRXvDkqEmIjIsjHUjsOCgplOr",
-  database: "railway",
-  port: 24893 
+  host: process.env.MYSQLHOST || "127.0.0.1",
+  user: process.env.MYSQLUSER || "root",
+  password: process.env.MYSQLPASSWORD || "",
+  database: process.env.MYSQLDATABASE || "crud_auth",
+  port: process.env.MYSQLPORT || 3306
 });
 
-conn.connect(err => {
-  if (err) throw err;
-  console.log('Connected!');
+conn.connect((err) => {
+  if (err) {
+    console.error("Database connection failed:", err);
+    return;
+  }
+  console.log("Database connected!");
 });
 
 module.exports = conn;
